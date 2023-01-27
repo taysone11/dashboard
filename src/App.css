@@ -1,38 +1,365 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Kavoon&family=Raleway:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&display=swap");
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 14rem 1.8rem auto 1.8rem 23rem;
+  grid-template-columns: 14rem auto 23rem;
+  width: 96%;
+  gap: 1.8rem;
+  margin: 0 auto;
+}
+.container small {
+  color: rgba(109, 107, 107, 0.795);
+}
+
+a {
+  color: black;
+}
+
+.dashboard_MAIN_btn {
+  font-size: 1.8rem;
+  font-family: "Kavoon", cursive;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+span.pr {
+  color: rgb(240, 18, 192);
+}
+
+aside {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+aside .top {
+  margin-top: 1.5rem;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+aside .sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  top: 3rem;
+  height: 86vh;
+}
+aside .sidebar a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2rem;
+  gap: 0.9rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 3.7rem;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  color: rgba(90, 92, 94, 0.911);
+  transition: all 300ms ease;
+}
+aside .sidebar a:last-child {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+aside .sidebar a.active {
+  background-color: rgba(212, 182, 224, 0.747);
+  color: rgb(146, 62, 224);
+  margin-left: 0;
+}
+aside .sidebar a.active::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background-color: blueviolet;
+}
+aside .sidebar a.active span {
+  margin-left: calc(1rem - 3px);
+}
+aside .sidebar a:hover span {
+  margin-left: 1rem;
+}
+aside .sidebar a span {
+  font-size: 1.7rem;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+main {
+  margin-top: 1rem;
+  font-family: "Ubuntu", sans-serif;
+}
+main .date {
+  display: inline-block;
+  background-color: rgb(200, 202, 200);
+  border-radius: 10px;
+  padding: 0.5rem 1.2rem;
+  margin-top: 5px;
+}
+main .date input[type=date] {
+  background-color: transparent;
+  color: rgb(84, 85, 87);
+  font-size: 1rem;
+}
+main .materials .top {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.2rem 1fr 1.2rem 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+main .materials .top > div .left {
+  padding: 0 0.7rem;
+}
+main .materials .top > div {
+  background-color: rgb(255, 255, 255);
+  padding: 18px;
+  margin-top: 1rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0px 2px 20px 2px rgba(183, 207, 207, 0.753);
+          box-shadow: 0px 2px 20px 2px rgba(183, 207, 207, 0.753);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+main .materials .top > div:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+main .materials .top > div span {
+  padding: 0.6rem;
+  background-color: rgba(140, 53, 228, 0.692);
+  border-radius: 50%;
+  font-size: 1.7rem;
+}
+main .materials .top > div.dashboard__newUsers span {
+  background-color: rgb(248, 181, 37);
+}
+main .materials .top > div.dashboard__earning span {
+  background-color: rgb(99, 248, 40);
+}
+main .materials .top div .middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+main .materials .top div .middle h3 {
+  margin: 1rem 0 0.2rem;
+}
+main .materials .top div .middle h1 {
+  font-family: "Secular One", sans-serif;
+}
+main .materials .top div .middle .progress {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+main .materials .top div .middle svg {
+  width: 7rem;
+  height: 7rem;
+}
+main .materials .top svg circle {
+  fill: none;
+  stroke: rgb(159, 73, 230);
+  stroke-width: 14;
+  stroke-linecap: round;
+  -webkit-transform: translate(5px, 5px);
+          transform: translate(5px, 5px);
+  stroke-dasharray: 90;
+  stroke-dashoffset: 92;
+}
+main .materials .top .dashboard__earning svg circle {
+  stroke-dasharray: 250;
+  stroke-dashoffset: -30;
+}
+main .materials .top p {
+  color: rgb(160, 87, 230);
+}
+main .materials .top .progress .percent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgb(99, 248, 40);
+}
+main .materials .top small {
+  color: rgb(164, 164, 165);
+}
+main .materials .top .dashboard__analitics {
+  padding: 1rem 2rem;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-column-span: 2;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 1;
+  grid-row-end: 2;
+}
+main .materials .bottom {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+main .materials .bottom table {
+  margin-bottom: 0.7rem;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 0px 2px 20px 2px rgba(183, 207, 207, 0.753);
+          box-shadow: 0px 2px 20px 2px rgba(183, 207, 207, 0.753);
+  border-radius: 2rem;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  padding: 1rem 1.5rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main .materials .bottom table tbody td {
+  height: 2.3rem;
+  border-bottom: 1px solid lightgrey;
+}
+main .materials .bottom table tbody tr:last-child td {
+  border: none;
+}
+main .materials .bottom table tbody td.payment {
+  color: rgb(25, 172, 25);
+  font-weight: 600;
+}
+main .materials .bottom table:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+main .materials .bottom .Linka {
+  color: rgba(150, 148, 148, 0.808);
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+main .materials .bottom .Linka:hover {
+  color: rgb(138, 137, 137);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.right {
+  margin-top: 1.4rem;
+  font-family: "Ubuntu", sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.right .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 2rem;
 }
-
-.App-link {
-  color: #61dafb;
+.right .top button {
+  display: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right .top .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+}
+.right .theme-toggler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 1.6rem;
+  width: 4.2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgb(209, 205, 205);
+}
+.right .theme-toggler span {
+  font-size: 1.2rem;
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.right .updates {
+  margin-top: 0.8rem;
+  background-color: white;
+  border-radius: 2rem;
+  -webkit-box-shadow: 0px 2px 20px 2px rgba(183, 207, 207, 0.753);
+          box-shadow: 0px 2px 20px 2px rgba(183, 207, 207, 0.753);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+.right .updates:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.right .updates .update {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2.6rem 1rem auto;
+  grid-template-columns: 2.6rem auto;
+  gap: 1rem;
+  margin: 0.8rem 1rem;
+}
+.right .updates .update p b {
+  color: black;
+}
+.right .updates .update p {
+  color: rgb(105, 102, 102);
+}
+.right .profile-photo {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border-radius: 50%;
+  margin-right: 15px;
 }
