@@ -211,6 +211,18 @@ main {
             stroke-dasharray:250 ;
             stroke-dashoffset: -30;
         } 
+        .dashboard__analitics svg circle {
+            stroke-dasharray:250 ;
+            stroke-dashoffset: -90;
+        } 
+        .dashboard__newUsers svg circle {
+            stroke-dasharray:250 ;
+            stroke-dashoffset: -17;
+        } 
+        .dashboard__quests svg circle {
+            stroke-dasharray:250 ;
+            stroke-dashoffset: -26;
+        } 
         p {
           color: rgb(160, 87, 230);
         }

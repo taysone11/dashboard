@@ -191,6 +191,18 @@ main .materials .top .dashboard__earning svg circle {
   stroke-dasharray: 250;
   stroke-dashoffset: -30;
 }
+main .materials .top .dashboard__analitics svg circle {
+  stroke-dasharray: 250;
+  stroke-dashoffset: -90;
+}
+main .materials .top .dashboard__newUsers svg circle {
+  stroke-dasharray: 250;
+  stroke-dashoffset: -17;
+}
+main .materials .top .dashboard__quests svg circle {
+  stroke-dasharray: 250;
+  stroke-dashoffset: -26;
+}
 main .materials .top p {
   color: rgb(160, 87, 230);
 }

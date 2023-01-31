@@ -1,6 +1,14 @@
-
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export function Sidebar() {
+
+    const array1 = document.querySelector(".sidebar")
+    
+    
+
+  
+
     return (
         
         <aside>
@@ -9,34 +17,34 @@ export function Sidebar() {
           </div>
         
         <div className="sidebar">
-          <a href=""  className="active">
+          <Link to="/dashboard"  className="active">
           <span class="material-icons-outlined">dashboard</span>
             <h3>Dashboard</h3>
-          </a >
-          <a href="">
+          </Link >
+          <Link to="/tasks" className="">
           <span class="material-icons-outlined">list_alt</span>
             <h3>My tasks</h3>
-          </a >
-          <a href="">
+          </Link >
+          <Link to="users" className="" >
           <span class="material-icons-outlined">group</span>
             <h3>Users</h3>
-          </a >
-          <a href="" >
+          </Link >
+          <Link to="messages" className="">
           <span class="material-icons-outlined">mail</span>
             <h3>Messages</h3>
-          </a >
-          <a href="">
+          </Link >
+          <Link to="reports" className="">
           <span class="material-icons-outlined">report</span>
             <h3>Reports</h3>
-          </a >
-          <a href="">
+          </Link >
+          <Link to="settings" className="">
           <span class="material-icons-outlined">settings</span>
             <h3>Settings</h3>
-          </a >
-          <a href="">
+          </Link>
+          <Link to="log-in" className="">
           <span class="material-icons-outlined">logout</span>
             <h3>Logout</h3>
-          </a >
+          </Link>
         </div>
         </aside>
 

@@ -13,7 +13,7 @@ const Quests = () => {
                                             <svg>
                                                 <circle cx="43" cy="43" r="38"></circle>
                                             </svg>
-                                            <div className="percent"><p>87%</p></div>
+                                            <div className="percent"><p>89%</p></div>
                                         </div>    
                                     </div>
                                     <small className="text-muted">last 24 hours</small>

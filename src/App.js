@@ -4,6 +4,7 @@ import { Sidebar } from "./components/sidebar/Sidebar";
 import Dashboard from "./components/dashboard/Dashboard";
 import {BrowserRouter as Router, Route, Link } from "react-router-dom";
 import RightBoard from "./components/rightBoard/RightBoard";
+import AppRouter from "./router/AppRouter";
 function App() {
 
   
@@ -15,7 +16,7 @@ function App() {
 
     <Router>
         <Sidebar />
-        <Dashboard/>
+        <AppRouter/>
         <RightBoard/>
         </Router>
 
