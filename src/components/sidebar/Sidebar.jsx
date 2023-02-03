@@ -1,13 +1,21 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
+import { AuthContext } from "../../context"
 
 export function Sidebar() {
 
-    const array1 = document.querySelector(".sidebar")
+    const [links, setLinks] = useState([
+      {to: "/dashboard" , icon:"dashboard", title:"Dashboard", active:true, classname:"link active"},
+      {to: "/tasks" , icon:"list_alt", title:"My tasks",active:false,classname:"link"},
+      {to: "/users" , icon:"group", title:"Users",active:false,classname:"link"},
+      {to: "/messages" , icon:"mail", title:"Messages",active:false,classname:"link"},
+      {to: "/reports" , icon:"report", title:"Report",classname:"link"},
+      {to: "/settings" , icon:"settings", title:"Settings",active:false,classname:"link"},
+      
+    ])
     
-    
+    const {isAuth,setAuth} = useContext(AuthContext)
 
-  
 
     return (
         
@@ -17,34 +25,20 @@ export function Sidebar() {
           </div>
         
         <div className="sidebar">
-          <Link to="/dashboard"  className="active">
-          <span class="material-icons-outlined">dashboard</span>
-            <h3>Dashboard</h3>
-          </Link >
-          <Link to="/tasks" className="">
-          <span class="material-icons-outlined">list_alt</span>
-            <h3>My tasks</h3>
-          </Link >
-          <Link to="users" className="" >
-          <span class="material-icons-outlined">group</span>
-            <h3>Users</h3>
-          </Link >
-          <Link to="messages" className="">
-          <span class="material-icons-outlined">mail</span>
-            <h3>Messages</h3>
-          </Link >
-          <Link to="reports" className="">
-          <span class="material-icons-outlined">report</span>
-            <h3>Reports</h3>
-          </Link >
-          <Link to="settings" className="">
-          <span class="material-icons-outlined">settings</span>
-            <h3>Settings</h3>
-          </Link>
-          <Link to="log-in" className="">
-          <span class="material-icons-outlined">logout</span>
-            <h3>Logout</h3>
-          </Link>
+          {
+            links.map(link =>
+                <Link to={link.to} className="a">
+                  <span className="material-icons-outlined">{link.icon}</span>
+                  <h3>{link.title}</h3>
+                </Link>)
+          }
+          <Link to='log-in' onClick={()=> {
+            setAuth(false)
+            localStorage.removeItem('auth')
+          }}>
+                  <span className="material-icons-outlined">logout</span>
+                  <h3>Logout</h3>
+                </Link>
         </div>
         </aside>
 

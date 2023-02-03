@@ -412,3 +412,55 @@ main {
 
 
 
+// AUTH PAGE
+
+.Log-in {
+  width: 40vw;
+  margin: auto;
+  margin-top: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  input {
+    padding: 10px 25px;
+    border-radius: 5px;
+    box-shadow: 0 0.8px 5px 0.1px purple;
+    border: 0.4px solid gray;
+    height: 30px;
+    margin: 7px 0;
+  }
+  button {
+    margin-top: 5px;
+    background: linear-gradient(to right, rgb(226, 82, 202), rgb(173, 25, 231));
+    height: 1.8rem;
+    width: 80%;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Secular One', sans-serif;
+    cursor: pointer;
+  }
+  button:hover {
+    background: linear-gradient(to right, rgb(179, 60, 159), rgb(131, 10, 179));
+    color: rgb(255, 255, 255);
+  }
+}
+
+
+
+.ErrorPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  span {
+    font-size: 7rem;
+    color: red;
+  }
+}
