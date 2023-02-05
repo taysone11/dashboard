@@ -1,20 +1,13 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context"
-
+import {Data} from "./Data"
 export function Sidebar() {
 
-    const [links, setLinks] = useState([
-      {to: "/dashboard" , icon:"dashboard", title:"Dashboard", active:true, classname:"link active"},
-      {to: "/tasks" , icon:"list_alt", title:"My tasks",active:false,classname:"link"},
-      {to: "/users" , icon:"group", title:"Users",active:false,classname:"link"},
-      {to: "/messages" , icon:"mail", title:"Messages",active:false,classname:"link"},
-      {to: "/reports" , icon:"report", title:"Report",classname:"link"},
-      {to: "/settings" , icon:"settings", title:"Settings",active:false,classname:"link"},
-      
-    ])
     
-    const {isAuth,setAuth} = useContext(AuthContext)
+    
+    const {isAuth, setAuth} = useContext(AuthContext)
+  const [selected, setSelected] = useState(0)
 
 
     return (
@@ -26,8 +19,12 @@ export function Sidebar() {
         
         <div className="sidebar">
           {
-            links.map(link =>
-                <Link to={link.to} className="a">
+            Data.map((link, index) =>
+                <Link to={link.to} 
+                key={index}
+                className={selected===index?"active":""}
+                onClick={() => setSelected(index)}
+                >
                   <span className="material-icons-outlined">{link.icon}</span>
                   <h3>{link.title}</h3>
                 </Link>)

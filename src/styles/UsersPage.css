@@ -56,7 +56,8 @@
 }
 .userId_PersonInfo {
     display: flex;
-    margin-top: 20px;
+    margin-top: 2
+    0px;
     
     
 }
@@ -67,6 +68,7 @@
     box-shadow: 0 1px 3px 1px rgb(172, 29, 238);
     border-radius: 2px;
     margin-right: 20px;
+    border-radius: 5px;
 
     
 }
@@ -76,7 +78,7 @@
     width: 500px;
     display: flex;
     justify-content: space-between ;
-    
+    border-radius: 5px;
     
     box-shadow: 0 1px 3px 1px teal;
     padding: 15px;
@@ -90,12 +92,13 @@
 .userId__address {
     display: flex;
     flex-direction: column;
+    
 }
 .userId__company {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 620px;
-    
+    border-radius: 5px;
     box-shadow: 0 1px 3px 1px rgb(183, 38, 240);
     display: flex;
     align-items: center;

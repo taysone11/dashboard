@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useReducer, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import UsersApi from "../API/UsersApi";
 import FormReview from "../components/Users/UI/FormReview/FormReview";
 import Reviews from "../components/Users/UI/Reviews/Reviews";
@@ -48,12 +48,11 @@ export default function UserIdPage() {
           <div className="userId__photo">PHOTO</div>
           <div className="userId__wrapper">
             <div className="userId__contacts">
-              <a href="">{user.phone}</a>
-              <a href="">{user.website}</a>
+              <Link to="">{user.phone}</Link>
+              <Link to="">{user.website}</Link>
             </div>
             <div className="userId__address">
               <strong>city</strong>
-
               <strong>street</strong>
               <strong>suite</strong>
               <strong>zipcode</strong>
